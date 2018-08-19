@@ -1,0 +1,16 @@
+rules:
+  - id: com.user-over-account
+    pattern:
+      - account
+      - accounts
+    message: We usually prefer user over account
+    justification:
+      - "When *user* does not make sense, like *create my account* on signup"
+    glob:
+      - "**/*.yaml"
+      - "**/*.yml"
+      - "**/*.html.erb"
+    fail:
+      - All accounts
+    pass:
+      - All users
