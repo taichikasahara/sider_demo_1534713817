@@ -1,0 +1,15 @@
+rules:
+  - id: sample.empty_redirect_back
+    pattern: redirect_back()
+    message: |
+      Specify fallback_location option for the case referer is missing
+    examples:
+      - before: redirect_back
+        after: "redirect_back fallback_location: users_path"
+  - id: sample.password_reset_expired
+    pattern: password_reset_expired?
+    message: |
+      User#password_reset_expired? only works when reset_sent_at exists
+
+      Test the existence of the attribute before testing with the method.
+
