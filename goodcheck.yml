@@ -1,0 +1,19 @@
+rules:
+  - id: com.user-over-account
+    pattern:
+      - account
+      - accounts
+    message: |
+      We usually prefer user over account
+      
+      Please write *user* instead of *account* because it is more closer to our customer's language.
+    justification:
+      - "When *user* does not make sense, like *create my account* on signup"
+    glob:
+      - "**/*.yaml"
+      - "**/*.yml"
+      - "**/*.html.erb"
+    fail:
+      - All accounts
+    pass:
+      - All users
